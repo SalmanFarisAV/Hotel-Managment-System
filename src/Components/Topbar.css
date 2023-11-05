@@ -1,0 +1,30 @@
+.top{
+    display: flex;
+    align-items: center;
+    background-color: rgb(238, 238, 238);
+    
+}
+.top > h3{
+    color: rgb(0, 128, 255);
+    padding-left: 40px;
+    font-family:Trebuchet MS, sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+}
+.top > h3:hover{
+    cursor: pointer;
+}
+.topsign{
+    padding-left: 73%;
+}
+.topavatar:hover{
+    cursor: pointer;
+}
+.topbutton{
+   border-radius: 30px !important;
+   background-color: rgb(232, 232, 232) !important;
+   color: black !important;
+   font-weight: 600 !important;
+   text-transform: none !important;
+   
+}

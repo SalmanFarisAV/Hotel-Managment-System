@@ -1,0 +1,70 @@
+.a1{
+    display: flex;
+    flex-direction: column;
+    
+}
+.aa1{
+    text-align: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+.bookingbox{
+    background-image: url("../../Pics/bgpic4.jpg");
+    background-size: cover;
+    background-position: center;
+    border-radius: 30px;
+    margin-left: 500px;
+    margin-right: 500px;
+    height: 500px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    
+}
+.bookingbox>h1{
+    padding-top: 20px;
+}
+
+.booking-form {
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    justify-content: center;
+    
+    border-radius: 5px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input, select {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.bb {
+    width: 100%;
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.bb:hover {
+    background-color: #0056b3;
+}
+.lab{
+    font-weight: 600;
+}
+.pricetag{
+    font-weight: 900;
+    color: red;
+}
+.avail{
+    font-weight: 600;
+}
