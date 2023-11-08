@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Dining.css";
 import Topbar from "../../Components/Topbar";
 import Hotel from "../../Components/Hotel";
@@ -7,13 +7,35 @@ import line1 from "../../Pics/line1.1.png";
 import line2 from "../../Pics/line1.2.png";
 import Footer from "../../Components/Footer";
 import ImageLoader from "../../Components/ImageLoader";
+import { storage } from "../../Components/Firebase";
+import { ref, getDownloadURL } from "firebase/storage";
 function Dining() {
+  const [videoURL, setVideoURL] = useState(null);
+  useEffect(() => {
+    const videoRef = ref(storage, "dinvid.mp4");
+
+    getDownloadURL(videoRef)
+      .then((url) => {
+        setVideoURL(url);
+      })
+      .catch((error) => {
+        console.error("Error retrieving video:", error);
+      });
+  }, []);
   return (
     <div className="dining">
       <Topbar />
       <div className="homescroll">
         <Hotel />
         <div className="dining1">
+          {/* <video
+            className="diningvid"
+            src={videoURL}
+            type="video/mp4"
+            autoPlay
+            loop
+            muted
+          /> */}
           <video className="diningvid" src={dinvid} autoPlay loop muted />
           <div className="dining2">
             <img src={line1} alt="" className="lines" />

@@ -1,11 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Home.css";
 import Topbar from "../../Components/Topbar";
 import Hotel from "../../Components/Hotel";
 import vid1 from "../../Videos/vid1.mp4";
 import Footer from "../../Components/Footer";
 import ImageLoader from "../../Components/ImageLoader";
+import { storage } from "../../Components/Firebase";
+import { ref, getDownloadURL } from "firebase/storage";
 function Home() {
+  const [videoURL, setVideoURL] = useState(null);
+  useEffect(() => {
+    const videoRef = ref(storage, "vid1.mp4");
+
+    getDownloadURL(videoRef)
+      .then((url) => {
+        setVideoURL(url);
+      })
+      .catch((error) => {
+        console.error("Error retrieving video:", error);
+      });
+  }, []);
   return (
     <div className="home">
       <Topbar />
@@ -13,6 +27,14 @@ function Home() {
         <Hotel />
 
         <div className="home1">
+          {/* <video
+            className="hmvid"
+            src={videoURL}
+            type="video/mp4"
+            autoPlay
+            loop
+            muted
+          /> */}
           <video className="hmvid" src={vid1} autoPlay loop muted />
           <ImageLoader cname="line" num={22} />
 
@@ -34,7 +56,7 @@ function Home() {
             </div>
           </div>
 
-          <h1></h1>
+          <br></br>
           <ImageLoader cname="line" num={22} />
           <h2>Our Mission</h2>
           <ImageLoader cname="line" num={23} />
@@ -45,7 +67,7 @@ function Home() {
           </h3>
           <ImageLoader cname="hotelimg4" num={21} />
 
-          <h1></h1>
+          <br></br>
           <ImageLoader cname="line" num={22} />
           <h2>A Rich History</h2>
           <ImageLoader cname="line" num={23} />

@@ -20,30 +20,30 @@ function Room() {
               <h3 className="roomh3">AC</h3>
             </div>
             <div onClick={() => navigate("/rooms/nonac")} className="nonac">
-              <ImageLoader cname="acimg" num={25} />
+              <ImageLoader cname="acimg" num={25} noanimation={true} />
               <h3 className="roomh3">Non-AC</h3>
             </div>
           </div>
           <div className="ac-nonac">
             <div onClick={() => navigate("/rooms/presidential")} className="ac">
-              <ImageLoader cname="acimg" num={26} />
+              <ImageLoader cname="acimg" num={26} noanimation={true} />
               <h3 className="roomh3">Presidential Suite</h3>
               <img className="offerimg" src={offer} alt="" />
             </div>
             <div onClick={() => navigate("/rooms/deluxe")} className="nonac">
-              <ImageLoader cname="acimg" num={27} />
+              <ImageLoader cname="acimg" num={27} noanimation={true} />
               <h3 className="roomh3">Deluxe</h3>
               <img className="offerimg1" src={offer} alt="" />
             </div>
           </div>
           <div className="ac-nonac">
             <div onClick={() => navigate("/rooms/villa")} className="ac">
-              <ImageLoader cname="acimg" num={28} />
+              <ImageLoader cname="acimg" num={28} noanimation={true} />
               <h3 className="roomh3">Villas</h3>
               <img className="offerimg" src={offer} alt="" />
             </div>
             <div onClick={() => navigate("/rooms/studio")} className="nonac">
-              <ImageLoader cname="acimg" num={29} />
+              <ImageLoader cname="acimg" num={29} noanimation={true} />
               <h3 className="roomh3">Studio</h3>
               <img className="offerimg1" src={offer} alt="" />
             </div>

@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, set, onValue, update } from "firebase/database";
-
+import { getStorage } from "firebase/storage";
 const firebaseConfig = {
   apiKey: "AIzaSyAgyLQpTMIIsPz70s38gE9-oP_L9IoVgxY",
   authDomain: "dbms-hms.firebaseapp.com",
@@ -11,5 +11,5 @@ const firebaseConfig = {
 };
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
-
-export { database, ref, set, onValue, update };
+const storage = getStorage(app);
+export { database, ref, set, onValue, update, storage };
