@@ -203,7 +203,7 @@ function AdminHome() {
           <h3 className="adhead">Add Room</h3>
           <div className="price1">
             <div className="price2">
-              <h4>AC</h4>
+              <h4 className="adminh4">AC</h4>
               <div className="price3">
                 <label className="pp1">Single</label>
                 <input
@@ -237,7 +237,7 @@ function AdminHome() {
             </div>
 
             <div className="price2">
-              <h4>Non-AC</h4>
+              <h4 className="adminh4">Non-AC</h4>
               <div className="price3">
                 <label className="pp1">Single</label>
                 <input
@@ -273,7 +273,7 @@ function AdminHome() {
 
           <div className="price1">
             <div className="price2">
-              <h4>Presidential</h4>
+              <h4 className="adminh4">Presidential</h4>
               <div className="price3">
                 <label className="pp1">Single</label>
                 <input
@@ -307,7 +307,7 @@ function AdminHome() {
             </div>
 
             <div className="price2">
-              <h4>Delux</h4>
+              <h4 className="adminh4">Delux</h4>
               <div className="price3">
                 <label className="pp1">Single</label>
                 <input
@@ -343,7 +343,7 @@ function AdminHome() {
 
           <div className="price1">
             <div className="price2">
-              <h4>Villa</h4>
+              <h4 className="adminh4">Villa</h4>
               <div className="price3">
                 <label className="pp1">Single</label>
                 <input
@@ -357,7 +357,7 @@ function AdminHome() {
             </div>
 
             <div className="price2">
-              <h4>Studio</h4>
+              <h4 className="adminh4">Studio</h4>
               <div className="price3">
                 <label className="pp1">Single</label>
                 <input
@@ -399,7 +399,7 @@ function AdminHome() {
           <h3 className="adhead">Change Price</h3>
           <div className="price1">
             <div className="price2">
-              <h4>AC</h4>
+              <h4 className="adminh4">AC</h4>
               <div className="price3">
                 <label className="pp1">Single</label>
                 <input
@@ -433,7 +433,7 @@ function AdminHome() {
             </div>
 
             <div className="price2">
-              <h4>Non-AC</h4>
+              <h4 className="adminh4">Non-AC</h4>
               <div className="price3">
                 <label className="pp1">Single</label>
                 <input
@@ -469,7 +469,7 @@ function AdminHome() {
 
           <div className="price1">
             <div className="price2">
-              <h4>Presidential</h4>
+              <h4 className="adminh4">Presidential</h4>
               <div className="price3">
                 <label className="pp1">Single</label>
                 <input
@@ -503,7 +503,7 @@ function AdminHome() {
             </div>
 
             <div className="price2">
-              <h4>Delux</h4>
+              <h4 className="adminh4">Delux</h4>
               <div className="price3">
                 <label className="pp1">Single</label>
                 <input
@@ -539,7 +539,7 @@ function AdminHome() {
 
           <div className="price1">
             <div className="price2">
-              <h4>Villa</h4>
+              <h4 className="adminh4">Villa</h4>
               <div className="price3">
                 <label className="pp1">Single</label>
                 <input
@@ -553,7 +553,7 @@ function AdminHome() {
             </div>
 
             <div className="price2">
-              <h4>Studio</h4>
+              <h4 className="adminh4">Studio</h4>
               <div className="price3">
                 <label className="pp1">Single</label>
                 <input

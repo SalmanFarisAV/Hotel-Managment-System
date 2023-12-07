@@ -4,6 +4,7 @@ import Hotel from "../../Components/Hotel";
 import Footer from "../../Components/Footer";
 import "./Ac.css";
 import { database, ref, onValue, update } from "../../Components/Firebase";
+import BookingConfirm from "../../Components/BookingConfirm";
 function Studio() {
   const [a1price, setA1price] = useState(0);
   const [a2price, setA2price] = useState(0);
@@ -16,6 +17,17 @@ function Studio() {
     double: 0,
     quad: 0,
   });
+
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
+  const openBookingWindow = () => {
+    setIsBookingOpen(true);
+  };
+  const closeBookingWindow = () => {
+    setIsBookingOpen(false);
+  };
+  const [numRooms1, setNumRooms1] = useState(1);
+  const [numDays1, setNumDays1] = useState(1);
+  const [storedTotalPrice, setStoredTotalPrice] = useState(0);
 
   const retrievePrice = () => {
     onValue(ref(database, "Price/studioRoom"), (snapshot) => {
@@ -57,7 +69,6 @@ function Studio() {
     const updatedAvailableRooms = { ...availableRooms };
     updatedAvailableRooms[roomType] -= numRooms;
     if (updatedAvailableRooms[roomType] >= 0) {
-      alert("Booking Successful!");
       const acRoomRef = ref(database, "Rooms/studioRoom");
       update(acRoomRef, {
         A1: updatedAvailableRooms.single,
@@ -65,6 +76,13 @@ function Studio() {
         A3: updatedAvailableRooms.quad,
       });
       setAvailableRooms(updatedAvailableRooms);
+      const totalPrice = calculateTotalPrice();
+      setStoredTotalPrice(totalPrice);
+      setNumRooms1(numRooms);
+      setNumDays1(numDays);
+      setNumRooms(1);
+      setNumDays(1);
+      openBookingWindow();
       setNumRooms(1);
       setNumDays(1);
     } else {
@@ -119,6 +137,16 @@ function Studio() {
             </div>
           </div>
         </div>
+
+        <BookingConfirm
+          Openwindow={isBookingOpen}
+          closewindow={closeBookingWindow}
+          roomtype="Studio"
+          bedtype={roomType}
+          numroom={numRooms1}
+          numdays={numDays1}
+          price={storedTotalPrice}
+        />
         <Footer />
       </div>
     </div>

@@ -4,6 +4,7 @@ import Hotel from "../../Components/Hotel";
 import Footer from "../../Components/Footer";
 import "./Ac.css";
 import { database, ref, onValue, update } from "../../Components/Firebase";
+import BookingConfirm from "../../Components/BookingConfirm";
 
 function Ac() {
   const [a1price, setA1price] = useState(0);
@@ -17,6 +18,17 @@ function Ac() {
     double: 0,
     quad: 0,
   });
+
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
+  const openBookingWindow = () => {
+    setIsBookingOpen(true);
+  };
+  const closeBookingWindow = () => {
+    setIsBookingOpen(false);
+  };
+  const [numRooms1, setNumRooms1] = useState(1);
+  const [numDays1, setNumDays1] = useState(1);
+  const [storedTotalPrice, setStoredTotalPrice] = useState(0);
 
   const retrievePrice = () => {
     onValue(ref(database, "Price/acRoom"), (snapshot) => {
@@ -65,10 +77,13 @@ function Ac() {
         A3: updatedAvailableRooms.quad,
       });
       setAvailableRooms(updatedAvailableRooms);
-
+      const totalPrice = calculateTotalPrice();
+      setStoredTotalPrice(totalPrice);
+      setNumRooms1(numRooms);
+      setNumDays1(numDays);
       setNumRooms(1);
       setNumDays(1);
-      alert("Booking Successful!");
+      openBookingWindow();
     } else {
       alert("Not enough available rooms for the selected type.");
       setNumRooms(1);
@@ -122,6 +137,17 @@ function Ac() {
             </div>
           </div>
         </div>
+
+        <BookingConfirm
+          Openwindow={isBookingOpen}
+          closewindow={closeBookingWindow}
+          roomtype="AC"
+          bedtype={roomType}
+          numroom={numRooms1}
+          numdays={numDays1}
+          price={storedTotalPrice}
+        />
+
         <Footer />
       </div>
     </div>
